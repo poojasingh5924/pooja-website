@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pooja Singh - Biomedical Engineer & Clinical Innovator</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+:root {
+  --primary: #5B7C99;
+  --secondary: #7FA1C3;
+  --accent: #94B8D9;
+  --light-bg: #F0F4F8;
+  --card-bg: #FFFFFF;
+  --text-dark: #2C4A6B;
+  --text-muted: #5B7C99;
+  --border: #D4E1ED;
+  --hover-bg: #E8F0F7;
+}
+
+body {
+   font-family: "Times New Roman", Times, serif !important;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background: var(--light-bg);
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  transition: all 0.3s;
+}
+
+nav.scrolled {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-links a:active {
+  opacity: 0.7;
+  transform: scale(0.98);
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.mobile-menu span {
+  width: 25px;
+  height: 3px;
+  background: var(--primary);
+  transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 2rem 4rem;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+/* Gradient + movement */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, #7aa7ff 0%, #4b6dd8 40%, #2c3e92 80%);
+  z-index: -3;
+}
+
+/* Floating blurry light */
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  top: -100px;
+  right: -140px;
+  filter: blur(40px);
+  animation: float 8s ease-in-out infinite alternate;
+  z-index: -2;
+}
+
+@keyframes float {
+  from { transform: translateY(0) translateX(0) scale(1); }
+  to { transform: translateY(-40px) translateX(40px) scale(1.1); }
+}
+
+/* Position the particle canvas */
+#particles {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-text .subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  line-height: 1.7;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.9rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: white;
+  color: var(--primary);
+  border: 2px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+  background: var(--hover-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.btn-outline:active {
+  transform: translateY(0);
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid rgba(255,255,255,0.3);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+
+/* Section Styling */
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+#about {
+  background: linear-gradient(135deg, #F0F4F8 0%, #E8F0F7 100%);
+}
+
+#projects {
+  background: linear-gradient(135deg, #E8F0F7 0%, #F0F4F8 100%);
+}
+
+#clinical {
+  background: linear-gradient(135deg, #F0F4F8 0%, #E8F0F7 100%);
+}
+
+#skills {
+  background: linear-gradient(135deg, #E8F0F7 0%, #F0F4F8 100%);
+}
+
+#coursework {
+  background: linear-gradient(135deg, #F0F4F8 0%, #E8F0F7 100%);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* About Section */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.highlight-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.3s;
+  cursor: pointer;
+  user-select: none;
+}
+
+.highlight-card:hover {
+  transform: translateY(-5px);
+}
+
+.highlight-card:active {
+  opacity: 0.7;
+  transform: scale(0.98);
+}
+
+.highlight-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.highlight-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.highlight-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Projects Section */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s;
+  cursor: pointer;
+  user-select: none;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.project-card:active {
+  opacity: 0.7;
+  transform: scale(0.98);
+}
+
+.project-header {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 0px;
+  object-fit: contain;
+  background: white;
+  padding: 5px;
+}
+
+.project-title {
+  flex: 1;
+}
+
+.project-title h3 {
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-bottom: 0.3rem;
+}
+
+.project-status {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #D4E1ED, #C4D7E8);
+  color: var(--text-dark);
+}
+
+.project-body {
+  padding: 2rem;
+}
+
+.project-summary {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.project-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.project-card.expanded .project-details {
+  max-height: 2000px;
+  transition: max-height 0.5s ease-in;
+}
+
+.project-details ul {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.project-details li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-muted);
+}
+
+.project-details li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* Image Gallery */
+.image-gallery {
+  position: relative;
+  margin-top: 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.gallery-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery-track {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.gallery-slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.gallery-slide img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #f5f5f5;
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+  z-index: 10;
+}
+
+.gallery-nav:hover {
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.gallery-nav:active {
+  opacity: 0.7;
+  transform: translateY(-50%) scale(0.98);
+}
+
+.gallery-prev {
+  left: 10px;
+}
+
+.gallery-next {
+  right: 10px;
+}
+
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.gallery-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.gallery-dot.active {
+  background: var(--accent);
+  width: 24px;
+  border-radius: 4px;
+}
+
+.gallery-dot:active {
+  opacity: 0.7;
+  transform: scale(0.98);
+}
+
+.expand-btn {
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.expand-btn:hover {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(91, 124, 153, 0.3);
+}
+
+.expand-btn:active {
+  transform: translateY(0);
+}
+
+/* Clinical Section */
+.clinical-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.clinical-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.clinical-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+}
+
+.clinical-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.clinical-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+}
+
+.clinical-info h3 {
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 0.3rem;
+}
+
+.clinical-info p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.clinical-details ul {
+  list-style: none;
+}
+
+.clinical-details li {
+  padding: 0.8rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.clinical-details li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* Skills Section */
+.skills-container {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+.skill-category h3 {
+  color: var(--primary);
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
+}
+
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skill-badge {
+  background: linear-gradient(135deg, #D4E1ED, #C4D7E8);
+  color: var(--text-dark);
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(91, 124, 153, 0.15);
+  transition: all 0.3s;
+  cursor: default;
+  user-select: none;
+}
+
+.skill-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(91, 124, 153, 0.25);
+  background: linear-gradient(135deg, #C4D7E8, #B4C7D8);
+}
+
+.skill-badge:active {
+  opacity: 0.7;
+  transform: scale(0.98);
+}
+
+/* Coursework Section */
+.coursework-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.course-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  border-left: 5px solid var(--accent);
+}
+
+.course-card h3 {
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.course-card .degree-info {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 1.0rem;
+  font-style: italic;
+}
+
+.course-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.2rem;
+  row-gap: 0.2rem;
+}
+
+.course-list li {
+  padding: 0.3rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.course-list li:before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* Contact Section */
+.contact-section {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem;
+  border-radius: 20px;
+  margin: 4rem 2rem;
+}
+
+.contact-section h2 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  background: white;
+  color: var(--primary);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  transition: all 0.3s;
+  font-size: 1.1rem;
+}
+
+.contact-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  background: var(--hover-bg);
+}
+
+.contact-link:active {
+  transform: translateY(-1px);
+}
+
+/* Footer */
+footer {
+  background: var(--card-bg);
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+
+/* Selection highlight */
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+::-moz-selection {
+  background: var(--accent);
+  color: white;
+}
+
+/* Tap highlight */
+* {
+  -webkit-tap-highlight-color: rgba(91, 124, 153, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-image img {
+    width: 280px;
+    height: 280px;
+  }
+
+  .about-content,
+  .clinical-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-list {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 3rem 1.5rem;
+  }
+}
+
+#particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+  pointer-events: none;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">Pooja Singh</a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#clinical">Clinical</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#coursework">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="mobile-menu" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <canvas id="particles"></canvas>
+      <div class="hero-text">
+        <h1>Bridging Clinical Insight & Engineering Innovation</h1>
+        <p class="subtitle">Biomedical Engineer • Medical Device Specialist • Quality & Risk Engineer</p>
+        <p>Transforming healthcare through evidence-based device design, quality systems, and clinical workflow optimization.</p>
+        <div class="tags">
+          <span class="tag">Cornell BME M.Eng '25</span>
+          <span class="tag">B.D.S. '23</span>
+          <span class="tag">Six Sigma Certified</span>
+        </div>
+        <div class="cta-buttons">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/profile.jpeg" alt="Pooja Singh">
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="section-title">A Unique Perspective</h2>
+    <p class="section-subtitle">Combining clinical experience with engineering precision to create better medical devices</p>
+    <div class="about-content">
+      <div class="about-text">
+        <p>With hands-on clinical experience as a dentist and specialized training in biomedical engineering at Cornell, I bring a rare combination of <strong>patient-centered insight</strong> and <strong>technical precision</strong> to medical device development.</p>
+        <p>From observing surgical workflows in the OR to designing microfluidic diagnostics, conducting FMEA analyses, and implementing ISO 13485 quality systems, I've built expertise across the full product lifecycle, from concept to clinical implementation.</p>
+        <p>My goal: to create safer, more effective medical devices by translating real clinical needs into manufacturable, regulatory-compliant solutions.</p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-card">
+          <div class="highlight-icon">🏥</div>
+          <h3>Clinical Background</h3>
+          <p>2+ years dental practice with 500+ patients treated and OR observation experience</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">⚙️</div>
+          <h3>Engineering Skills</h3>
+          <p>CAD, COMSOL, prototyping, and design optimization</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">📊</div>
+          <h3>Quality Systems</h3>
+          <p>Six Sigma, FMEA, ISO 13485/14971 compliance</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">🔬</div>
+          <h3>Research Focus</h3>
+          <p>Biodesign Process, device reliability, and clinical workflow optimization</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+
+  <section id="projects">
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-subtitle">Innovative solutions at the intersection of clinical need and engineering excellence</p>
+
+```
+<div class="projects-grid">
+  <!-- InfantGuard -->
+  <div class="project-card" onclick="toggleProject(this)">
+    <div class="project-header">
+      <img src="images/infantguard-logo.png" alt="InfantGuard" class="project-logo">
+      <div class="project-title">
+        <h3>InfantGuard Smart Pacifier</h3>
+        <span class="project-status">In Progress</span>
+      </div>
+    </div>
+    <div class="project-body">
+      <p class="project-summary">GERD-sensing diagnostic device for neonatal care, developed in collaboration with Weill Cornell Medicine neonatologists.</p>
+      <div class="project-details">
+        <ul>
+          <li>Designed microfluidic architecture using CAD and COMSOL for pressure-drop optimization</li>
+          <li>Performed tolerance-driven evaluations and benchtop verification testing</li>
+          <li>Collaborated with neonatologists to analyze adoption barriers and develop user protocols</li>
+          <li>Created design controls documentation traceable to clinical requirements</li>
+        </ul>
+        <div class="image-gallery">
+          <div class="gallery-container">
+            <div class="gallery-track">
+              <div class="gallery-slide">
+                <img src="images/infantguard-1.jpeg" alt="InfantGuard CAD">
+              </div>
+              <div class="gallery-slide">
+                <img src="images/infantguard-2.jpeg" alt="InfantGuard Prototype">
+                
+              </div>
+              <div class="gallery-slide">
+                <img src="images/infantguard-3.jpeg" alt="InfantGuard Analysis">
+               
+              </div>
+            </div>
+            <button class="gallery-nav gallery-prev" onclick="event.stopPropagation(); prevSlide(this)">‹</button>
+            <button class="gallery-nav gallery-next" onclick="event.stopPropagation(); nextSlide(this)">›</button>
+          </div>
+          <div class="gallery-dots"></div>
+        </div>
+      </div>
+      <button class="expand-btn">Learn More</button>
+    </div>
+  </div>
+
+  <!-- CLABSI Project -->
+  <div class="project-card" onclick="toggleProject(this)">
+    <div class="project-header">
+      <img src="images/clabsi-logo.png" alt="CLABSI Prevention" class="project-logo">
+      <div class="project-title">
+        <h3>Pediatric CLABSI Prevention</h3>
+        <span class="project-status">Biodesign</span>
+      </div>
+    </div>
+    <div class="project-body">
+      <p class="project-summary">Catheter securement device to reduce central line infections in neonatal ICUs through improved design and antimicrobial materials.</p>
+      <div class="project-details">
+        <ul>
+          <li>Led structured interviews with 15+ nurses and physicians to identify clinical pain points</li>
+          <li>Conducted workflow mapping and root-cause analysis for catheter-related failures</li>
+          <li>Evaluated securement concepts using FMEA and usability risk assessment</li>
+          <li>Balanced infection control and skin compatibility in material selection</li>
+        </ul>
+        <div class="image-gallery">
+          <div class="gallery-container">
+            <div class="gallery-track">
+              <div class="gallery-slide">
+                <img src="images/clabsi-1.jpeg" alt="CLABSI Workflow">
+                
+              </div>
+              <div class="gallery-slide">
+                <img src="images/clabsi-2.jpeg" alt="CLABSI Design">
+                
+              </div>
+              <div class="gallery-slide">
+                <img src="images/clabsi-3.jpeg" alt="CLABSI Testing">
+                
+              </div>
+            </div>
+            <button class="gallery-nav gallery-prev" onclick="event.stopPropagation(); prevSlide(this)">‹</button>
+            <button class="gallery-nav gallery-next" onclick="event.stopPropagation(); nextSlide(this)">›</button>
+          </div>
+          <div class="gallery-dots"></div>
+        </div>
+      </div>
+      <button class="expand-btn">Learn More</button>
+    </div>
+  </div>
+
+  <!-- Insulin Pump -->
+  <div class="project-card" onclick="toggleProject(this)">
+    <div class="project-header">
+      <img src="images/insulin-logo.png" alt="Insulin Pump" class="project-logo">
+      <div class="project-title">
+        <h3>Insulin Pump Reliability</h3>
+        <span class="project-status">Six Sigma</span>
+      </div>
+    </div>
+    <div class="project-body">
+      <p class="project-summary">Comprehensive reliability analysis targeting 10% failure rate reduction through FMEA and life-data modeling.</p>
+      <div class="project-details">
+        <ul>
+          <li>Performed comprehensive FMEA across 8 components and 12 failure modes</li>
+          <li>Modeled cost-per-RPN reduction to prioritize $155M+ in potential annual savings</li>
+          <li>Linked failure modes to patient impact and regulatory compliance pathways</li>
+          <li>Developed corrective action plans with traceable risk mitigation strategies</li>
+        </ul>
+        <div class="image-gallery">
+          <div class="gallery-container">
+            <div class="gallery-track">
+              <div class="gallery-slide">
+                <img src="images/insulin-1.jpeg" alt="Insulin FMEA">
+                
+              </div>
+              <div class="gallery-slide">
+                <img src="images/insulin-2.jpeg" alt="Insulin Process">
+                
+              </div>
+              <div class="gallery-slide">
+                <img src="images/insulin-3.jpeg" alt="Insulin Results">
+               
+              </div>
+            </div>
+            <button class="gallery-nav gallery-prev" onclick="event.stopPropagation(); prevSlide(this)">‹</button>
+            <button class="gallery-nav gallery-next" onclick="event.stopPropagation(); nextSlide(this)">›</button>
+          </div>
+          <div class="gallery-dots"></div>
+        </div>
+      </div>
+      <button class="expand-btn">Learn More</button>
+    </div>
+  </div>
+
+  <!-- Patient-Specific Implants -->
+  <div class="project-card" onclick="toggleProject(this)">
+    <div class="project-header">
+      <img src="images/implant-logo.png" alt="Custom Implants" class="project-logo">
+      <div class="project-title">
+        <h3>Patient-Specific Implants</h3>
+        <span class="project-status">Clinical Collaboration</span>
+      </div>
+    </div>
+    <div class="project-body">
+      <p class="project-summary">Custom craniofacial implants for mucormycosis rehabilitation using CBCT imaging and precision CAD modeling.</p>
+      <div class="project-details">
+        <ul>
+          <li>Created custom implant designs from CBCT imaging with dimensional accuracy requirements</li>
+          <li>Defined manufacturability and inspection criteria for machined titanium components</li>
+          <li>Collaborated with oral surgeons to ensure anatomical fit and surgical workflow integration</li>
+          <li>Mapped regulatory considerations for Class I exempt custom medical devices</li>
+        </ul>
+       <div class="image-gallery">
+  <div class="gallery-container">
+    <div class="gallery-track">
+
+      <div class="gallery-slide">
+        <img src="images/implant-1.jpg" alt="Implant CAD">
+      </div>
+
+
+    </div>
+
+    <button class="gallery-nav gallery-prev" onclick="event.stopPropagation(); prevSlide(this)">‹</button>
+    <button class="gallery-nav gallery-next" onclick="event.stopPropagation(); nextSlide(this)">›</button>
+      </div>
+
+        <div class="gallery-dots"></div>
+      </div>
+
+    </div> <!-- THIS ONE WAS MISSING -->
+    
+    <button class="expand-btn">Learn More</button>
+  </div>
+
+</div>
+
+  <!-- Top Gun Simulation -->
+<div class="project-card" onclick="toggleProject(this)">
+  <div class="project-header">
+    <img src="images/topgun-logo.png" alt="Top Gun" class="project-logo">
+    <div class="project-title">
+      <h3>Surgical Simulation Training</h3>
+      <span class="project-status">Education</span>
+    </div>
+  </div>
+
+  <div class="project-body">
+    <p class="project-summary">
+      Optimized laparoscopic training modules to improve surgical skill development and procedural competency.
+    </p>
+
+    <div class="project-details">
+      <ul>
+        <li>Worked with surgical teams to translate procedures into realistic training tasks</li>
+        <li>Refined simulator components for improved durability and tactile feedback</li>
+        <li>Gathered trainee feedback to enhance ergonomics and scoring mechanisms</li>
+        <li>Developed structured assessment criteria for skill progression tracking</li>
+      </ul>
+    </div>
+    <button class="expand-btn">Learn More</button>
+  </div>
+</div>
+
+
+  </section>
+
+  <!-- Clinical Experience Section -->
+
+  <section id="clinical">
+    <h2 class="section-title">Clinical Experience</h2>
+    <p class="section-subtitle">Direct patient care and surgical observation inform every design decision</p>
+
+```
+<div class="clinical-grid">
+
+  <div class="clinical-card">
+    <div class="clinical-header">
+      <div class="clinical-icon">🏥</div>
+      <div class="clinical-info">
+        <h3>Surgical Preceptorship</h3>
+        <p>
+          <a href="https://www.guthrie.org/locations/guthrie-robert-packer-hospital" 
+             target="_blank" 
+              style="color: #1C3B5A;">
+              Guthrie Robert Packer Hospital
+  </a>
+  &nbsp;|&nbsp; Aug 2024 - Present
+</p>
+      </div>
+    </div>
+
+    <!-- ⭐ ADD YOUR IMAGE HERE ⭐ -->
+    <div class="clinical-image">
+       <img src="images/clinical-photo.jpg"
+       alt="Surgical Preceptorship"
+       style="
+         width:100%;
+         max-height:380px;
+         object-fit:cover;
+         border-radius:18px;
+         margin-bottom:1.5rem;
+         box-shadow:0 6px 18px rgba(0,0,0,0.18);
+       ">
+    </div>
+
+    <div class="clinical-details">
+      <ul>
+        <li>As part of my orthopaedic preceptorship at Guthrie Robert Packer Hospital, I observed a variety of orthopaedic, spinal and cranio-maxillofacial surgeries. The exposure to different specialties revealed workflow bottlenecks, instrument handling patterns and sterile-field constraints that feed back into my risk analyses and usability assessments.</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="clinical-card">
+    <div class="clinical-header">
+      <div class="clinical-icon">🦷</div>
+      <div class="clinical-info">
+        <h3>Dental Practice</h3>
+        <p>India | March 2022 - Oct 2024</p>
+      </div>
+    </div>
+
+  <!-- Dentist image -->
+  <div class="clinical-image">
+    <img src="images/clinical1.jpg"
+         alt="Dental Practice"
+         style="
+           width:100%;
+           max-height:380px;
+           object-fit:cover;
+           border-radius:18px;
+           margin-bottom:1.5rem;
+           box-shadow:0 6px 18px rgba(0,0,0,0.18);
+         ">
+  </div>
+    
+    <div class="clinical-details">
+      <ul>
+    
+        <li>During my dental training and practice at Karnavati School of Dentistry and in private clinics, I performed surgical extractions, restorative treatments and imaging studies under strict infection‑control protocols. I cared for more than 500 patients and organised over 20 health camps for underserved communities. These experiences taught me that even simple tools must withstand real‑world pressures, an insight I carry forward into device development.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  </section>
+
+  <!-- Skills Section -->
+
+  <section id="skills">
+    <h2 class="section-title">Technical Expertise</h2>
+    <p class="section-subtitle">A comprehensive toolkit for medical device development and quality assurance</p>
+
+```
+<div class="skills-container">
+  <div class="skills-grid">
+    <div class="skill-category">
+      <h3>Product Design & CAD</h3>
+      <div class="skill-items">
+        <span class="skill-badge">SolidWorks</span>
+        <span class="skill-badge">Fusion 360</span>
+        <span class="skill-badge">AutoCAD</span>
+        <span class="skill-badge">COMSOL</span>
+        <span class="skill-badge">Microfluidic Design</span>
+        <span class="skill-badge">GD&T</span>
+        <span class="skill-badge">3D Modeling</span>
+        <span class="skill-badge">Tolerance Analysis</span>
+        <span class="skill-badge">Design for manufacturability</span>
+        <span class="skill-badge">multi-material prototyping</span>
+        <span class="skill-badge">Design History File</span>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <h3>Manufacturing & Prototyping</h3>
+      <div class="skill-items">
+        <span class="skill-badge">SLA Printing</span>
+        <span class="skill-badge">CAD-CAM Fabrication</span>
+        <span class="skill-badge">Resin Printing</span>
+        <span class="skill-badge">Benchtop Testing</span>
+        <span class="skill-badge">Design Verification</span>
+        <span class="skill-badge">Material Selection</span>
+        <span class="skill-badge">Prototype Iteration Cycles</span>
+         <span class="skill-badge">regulatory Pathway Mapping</span>
+
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <h3>Quality & Risk Management</h3>
+      <div class="skill-items">
+        <span class="skill-badge">Six Sigma Black Belt Training</span>
+        <span class="skill-badge">ISO 13485</span>
+        <span class="skill-badge">ISO 14971</span>
+        <span class="skill-badge">21 CFR 820</span>
+        <span class="skill-badge">FMEA (dFMEA/pFMEA)</span>
+        <span class="skill-badge">Design Controls</span>
+        <span class="skill-badge">CAPA</span>
+        <span class="skill-badge">Root Cause Analysis</span>
+        <span class="skill-badge">Fault Tree Analysis</span>
+        <span class="skill-badge">	Post-Market Surveillance (PMS) Basics</span>
+    
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <h3>Data Analysis & Statistics</h3>
+      <div class="skill-items">
+        <span class="skill-badge">Python</span>
+        <span class="skill-badge">R</span>
+        <span class="skill-badge">Minitab</span>
+        <span class="skill-badge">DOE</span>
+        <span class="skill-badge">SPC</span>
+        <span class="skill-badge">Weibull Analysis</span>
+        <span class="skill-badge">Gauge R&R</span>
+        <span class="skill-badge">ANOVA</span>
+        <span class="skill-badge">Reliability Modeling</span>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <h3>Validation & Testing</h3>
+      <div class="skill-items">
+        <span class="skill-badge">IQ/OQ/PQ</span>
+        <span class="skill-badge">Test Method Development</span>
+        <span class="skill-badge">V&V Planning</span>
+        <span class="skill-badge">Biocompatibility</span>
+        <span class="skill-badge">Measurement Systems</span>
+        <span class="skill-badge">Protocol Writing</span>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <h3>Clinical & Research</h3>
+      <div class="skill-items">
+        <span class="skill-badge">Biodesign Process Application</span>
+        <span class="skill-badge">Workflow Analysis</span>
+        <span class="skill-badge">Medical Imaging</span>
+        <span class="skill-badge">Tissue Engineering</span>
+        <span class="skill-badge">OR Observation & Documentation</span>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- Coursework Section -->
+
+  <section id="coursework">
+    <h2 class="section-title">Education & Training</h2>
+    <p class="section-subtitle">Formal education providing the foundation for medical device innovation</p>
+
+```
+<div class="coursework-grid">
+  <div class="course-card">
+    <h3>Master of Engineering in Biomedical Engineering</h3>
+    <p class="degree-info">Cornell University | Expected December 2025 | Ithaca, NY</p>
+    <ul class="course-list">
+      <li>Innovation & Design in Biomedical Technology</li>
+      <li>Systems Engineering & Six Sigma</li>
+      <li>Clinical Preceptorship (Guthrie Hospital)</li>
+      <li>Systems Mechanobiology & Tissue Engineering</li>
+      <li>Cancer and Immuno-Engineering</li>
+      <li>Design Project (Capstone)</li>
+      <li>Entrepreneurial Management for Engineers</li>
+      <li>Bioethics & Mediation</li>
+    </ul>
+  </div>
+
+  <div class="course-card">
+    <h3>Bachelor of Dental Surgery (B.D.S.)</h3>
+    <p class="degree-info">Karnavati School of Dentistry | April 2023 | Gandhinagar, India</p>
+    <ul class="course-list">
+      <li>Anatomy, Physiology & Biochemistry</li>
+      <li>Pathology, Microbiology & Pharmacology</li>
+      <li>Dental Anatomy & Oral Histology</li>
+      <li>Dental Materials Science</li>
+      <li>Oral & Maxillofacial Surgery</li>
+      <li>Conservative Dentistry & Endodontics</li>
+      <li>Prosthodontics & Crown-Bridge</li>
+      <li>Orthodontics & Dentofacial Orthopedics</li>
+      <li>Periodontology</li>
+      <li>Pediatric Dentistry</li>
+      <li>Oral Medicine & Radiology</li>
+      <li>Public Health Dentistry</li>
+    </ul>
+  </div>
+
+  <div class="course-card">
+    <h3>Professional Certifications & Training</h3>
+    <p class="degree-info">Supplemental certifications enhancing technical capabilities</p>
+    <ul class="course-list">
+      <li>Six Sigma Black Belt (Cornell University)</li>
+      <li>SolidWorks Professional License</li>
+      <li>Professional AutoCAD Certificate</li>
+      <li>Licensed Dentist (India)</li>
+      <li>Formlabs SLA Printing Workshop</li>
+      <li>Stratasys Additive Manufacturing Training</li>
+      <li>ISO 13485 Quality Systems Training</li>
+      <li>FDA 21 CFR 820 Design Controls</li>
+    </ul>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- Contact Section -->
+
+  <div class="contact-section" id="contact">
+    <h2>Let's Connect</h2>
+    <p>IIf you’d like to discuss collaborations, explore these projects in more depth or simply connect, feel free to reach out.</p>
+    <div class="contact-links">
+      <a href="mailto:ps2258@cornell.edu" class="contact-link">
+        📧 ps2258@cornell.edu
+      </a>
+      <a href="https://www.linkedin.com/in/dr-pooja-singh-b-d-s-831210238/" target="_blank" class="contact-link">
+        💼 LinkedIn Profile
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+
+  <footer>
+    <p>&copy; 2025 Pooja Purshottam Singh, B.D.S. | Biomedical Engineer </p>
+  </footer>
+
+  <script>
+  // Auto-rotate every gallery every 3 seconds
+  document.querySelectorAll(".image-gallery").forEach(gallery => {
+    let index = 0;
+    const slides = gallery.querySelectorAll(".gallery-slide");
+    const track = gallery.querySelector(".gallery-track");
+
+    function rotate() {
+      index = (index + 1) % slides.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    setInterval(rotate, 3000); // 3000ms = 3 seconds
+  });
+
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    
+
+    // Toggle project card expansion
+    function toggleProject(card) {
+      const isExpanded = card.classList.contains('expanded');
+      
+      // Close all other cards
+      document.querySelectorAll('.project-card').forEach(c => {
+        c.classList.remove('expanded');
+        const btn = c.querySelector('.expand-btn');
+        if (btn) btn.textContent = 'Learn More';
+      });
+      
+      if (!isExpanded) {
+        card.classList.add('expanded');
+        const btn = card.querySelector('.expand-btn');
+        if (btn) btn.textContent = 'Show Less';
+        
+        // Initialize gallery for this card
+        initGallery(card);
+      }
+    }
+
+    // Initialize image gallery
+    function initGallery(card) {
+      const gallery = card.querySelector('.image-gallery');
+      if (!gallery) return;
+      
+      const track = gallery.querySelector('.gallery-track');
+      const slides = gallery.querySelectorAll('.gallery-slide');
+      const dotsContainer = gallery.querySelector('.gallery-dots');
+      
+      if (!track || slides.length === 0) return;
+      
+      // Clear existing dots
+      dotsContainer.innerHTML = '';
+      
+      // Create dots
+      slides.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.className = 'gallery-dot';
+        if (index === 0) dot.classList.add('active');
+        dot.onclick = (e) => {
+          e.stopPropagation();
+          goToSlide(gallery, index);
+        };
+        dotsContainer.appendChild(dot);
+      });
+      
+      // Set initial position
+      track.style.transform = 'translateX(0)';
+    }
+
+    // Navigate to specific slide
+    function goToSlide(gallery, index) {
+      const track = gallery.querySelector('.gallery-track');
+      const slides = gallery.querySelectorAll('.gallery-slide');
+      const dots = gallery.querySelectorAll('.gallery-dot');
+      
+      if (index < 0 || index >= slides.length) return;
+      
+      track.style.transform = `translateX(-${index * 100}%)`;
+      
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+      
+      // Store current index
+      gallery.dataset.currentSlide = index;
+    }
+
+    // Previous slide
+    function prevSlide(btn) {
+      const gallery = btn.closest('.image-gallery');
+      const currentIndex = parseInt(gallery.dataset.currentSlide || 0);
+      const slides = gallery.querySelectorAll('.gallery-slide');
+      const newIndex = currentIndex > 0 ? currentIndex - 1 : slides.length - 1;
+      goToSlide(gallery, newIndex);
+    }
+
+    // Next slide
+    function nextSlide(btn) {
+      const gallery = btn.closest('.image-gallery');
+      const currentIndex = parseInt(gallery.dataset.currentSlide || 0);
+      const slides = gallery.querySelectorAll('.gallery-slide');
+      const newIndex = currentIndex < slides.length - 1 ? currentIndex + 1 : 0;
+      goToSlide(gallery, newIndex);
+    }
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    // Initialize all galleries on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.image-gallery').forEach(gallery => {
+        gallery.dataset.currentSlide = '0';
+      });
+    });
+  </script>
+
+  <script src="particles.js"></script>
+
+</body>
+</html>
