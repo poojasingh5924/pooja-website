@@ -1196,8 +1196,65 @@ footer {
   </div>
 </div>
 
+<!-- Reverse Dynamics: Hopping Analysis -->
+<div class="project-card" onclick="toggleProject(this)">
+  <div class="project-header">
+    <img src="images/lablogo.png" alt="Biomechanics Logo" class="project-logo">
+    <div class="project-title">
+      <h3>Reverse Dynamics: Hopping Analysis</h3>
+      <span class="project-status">Biomechanics</span>
+    </div>
+  </div>
 
+  <div class="project-body">
+    <p class="project-summary">
+      Motion-capture + force-plate study analyzing single-leg hopping to compute joint angles,
+      forces, torques, and mechanical power using MATLAB reverse-dynamics scripts.
+    </p>
+
+    <div class="project-details">
+      <ul>
+        <li>Processed raw marker and force-plate CSVs using custom MATLAB scripts</li>
+        <li>Computed joint positions, velocities, and accelerations for all tracked segments</li>
+        <li>Applied Newton-Euler equations to calculate joint forces and torques</li>
+        <li>Computed mechanical power and joint work across full hop cycle</li>
+        <li>Validated rigid-body assumptions and smoothed trajectories for accuracy</li>
+      </ul>
+
+      <!-- ⭐ IMAGE GALLERY ⭐ -->
+      <div class="image-gallery">
+        <div class="gallery-container">
+          <div class="gallery-track">
+
+            <div class="gallery-slide">
+              <img src="images/lab1.png" alt="Hopping Lab Photo 1">
+            </div>
+
+            <div class="gallery-slide">
+              <img src="images/lab2.png" alt="Hopping Lab Photo 2">
+            </div>
+
+            <div class="gallery-slide">
+              <img src="images/lab3.png" alt="Hopping Lab Photo 3">
+            </div>
+
+          </div>
+
+          <button class="gallery-nav gallery-prev" onclick="event.stopPropagation(); prevSlide(this)">‹</button>
+          <button class="gallery-nav gallery-next" onclick="event.stopPropagation(); nextSlide(this)">›</button>
+        </div>
+
+        <div class="gallery-dots"></div>
+      </div>
+      <!-- ⭐ END GALLERY ⭐ -->
+
+    </div>
+
+    <button class="expand-btn">Learn More</button>
+  </div>
+</div>
   </section>
+  
 
   <!-- Clinical Experience Section -->
 
