@@ -980,7 +980,7 @@ footer {
     <h2 class="section-title">Featured Projects</h2>
     <p class="section-subtitle">Innovative solutions at the intersection of clinical need and engineering excellence</p>
 
-```
+
 <div class="projects-grid">
   <!-- InfantGuard -->
   <div class="project-card" onclick="toggleProject(this)">
@@ -1011,31 +1011,33 @@ footer {
           <p><strong>Technical Skills:</strong> CAD modeling, COMSOL Multiphysics, microfluidic design, tolerance analysis, design controls, clinical needs assessment</p>
 
         </ul>
-        <div class="image-gallery">
-          <div class="gallery-container">
-            <div class="gallery-track">
-              <div class="gallery-slide">
-                <img src="images/infantguard-1.jpeg" alt="InfantGuard CAD">
-              </div>
-              <div class="gallery-slide">
-                <img src="images/infantguard-2.jpeg" alt="InfantGuard Prototype">
-                
-              </div>
-              <div class="gallery-slide">
-                <img src="images/infantguard-3.jpeg" alt="InfantGuard Analysis">
-               </div>
-              <div class="gallery-slide">
-                <img src="images/inf4.png" alt="InfantGuard Analysis">
-        
-              </div>
-              <div class="gallery-slide">
-                <img src="images/inf5.jpg" alt="InfantGuard Analysis">
+       <div class="image-gallery">
+        <div class="gallery-container">
+          <div class="gallery-track">
+            <div class="gallery-slide">
+              <img src="images/infantguard-1.jpeg" alt="InfantGuard CAD">
             </div>
-            <button class="gallery-nav gallery-prev" onclick="event.stopPropagation(); prevSlide(this)">‹</button>
-            <button class="gallery-nav gallery-next" onclick="event.stopPropagation(); nextSlide(this)">›</button>
+            <div class="gallery-slide">
+              <img src="images/infantguard-2.jpeg" alt="InfantGuard Prototype">
+            </div>
+            <div class="gallery-slide">
+              <img src="images/infantguard-3.jpeg" alt="InfantGuard Analysis">
+            </div>
+            <div class="gallery-slide">
+              <img src="images/inf4.png" alt="InfantGuard Analysis">
+            </div>
+            <div class="gallery-slide">
+              <img src="images/inf5.JPG" alt="InfantGuard Analysis">
+            </div>
           </div>
-          <div class="gallery-dots"></div>
-        </div>
+
+    <button class="gallery-nav gallery-prev" onclick="event.stopPropagation(); prevSlide(this)">‹</button>
+    <button class="gallery-nav gallery-next" onclick="event.stopPropagation(); nextSlide(this)">›</button>
+  </div>
+
+  <div class="gallery-dots"></div>
+</div>
+
       </div>
       <button class="expand-btn">Learn More</button>
     </div>
@@ -1409,7 +1411,7 @@ footer {
     <h2 class="section-title">Clinical Experience</h2>
     <p class="section-subtitle">Direct patient care and surgical observation inform every design decision</p>
 
-```
+
 <div class="clinical-grid">
 
   <div class="clinical-card">
@@ -1486,14 +1488,7 @@ footer {
 
   
 
-  <!-- Skills Section -->
-
- 
-
-  </section>
-
- ``
-
+  
   <div class="course-card">
     <h3>Professional Certifications & Training</h3>
     <p class="degree-info">Supplemental certifications enhancing technical capabilities</p>
@@ -1509,7 +1504,7 @@ footer {
     </ul>
   </div>
 </div>
-```
+
 
   </section>
 
@@ -1546,7 +1541,7 @@ footer {
       track.style.transform = `translateX(-${index * 100}%)`;
     }
 
-    setInterval(rotate, 3000); // 3000ms = 3 seconds
+    setInterval(rotate, 6000); // 3000ms = 3 seconds
   });
 
 
